@@ -159,12 +159,12 @@ variable "aft_feature_delete_default_vpcs_enabled" {
 
 
 variable "vcs_provider" {
-  description = "Customer VCS Provider - valid inputs are codecommit, bitbucket, github, or githubenterprise"
+  description = "Customer VCS Provider - valid inputs are codecommit, bitbucket, github, githubenterprise or gitlab"
   type        = string
   default     = "codecommit"
   validation {
-    condition     = contains(["codecommit", "bitbucket", "github", "githubenterprise"], var.vcs_provider)
-    error_message = "Valid values for var: vcs_provider are (codecommit, bitbucket, github, githubenterprise)."
+    condition     = contains(["codecommit", "bitbucket", "github", "githubenterprise", "gitlab"], var.vcs_provider)
+    error_message = "Valid values for var: vcs_provider are (codecommit, bitbucket, github, githubenterprise, gitlab)."
   }
 }
 
